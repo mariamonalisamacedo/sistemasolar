@@ -1,0 +1,14 @@
+{% extends 'tela/base.html' %}
+
+{% block title %}{{ view.object|default_if_none:'Novo Usuário' }} - Usuários{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h1>{% if view.object %}Editar Usuário{% else %}Novo Usuário{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Salvar</button>
+    </form>
+</div>
+{% endblock %}

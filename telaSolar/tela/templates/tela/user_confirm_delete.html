@@ -1,0 +1,15 @@
+{% extends 'tela/base.html' %}
+
+{% block title %}Excluir Usuário - Usuários{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h1>Confirmar exclusão</h1>
+    <p>Tem certeza que deseja excluir o usuário "{{ object.username }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn">Sim, excluir</button>
+        <a href="{% url 'users_list' %}" class="btn" style="background:#6b7280; margin-left:1rem;">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

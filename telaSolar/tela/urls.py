@@ -5,4 +5,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('cadastro/pf/', views.PessoaFisicaCreateView.as_view(), name='cadastro_pf'),
     path('cadastro/pj/', views.PessoaJuridicaCreateView.as_view(), name='cadastro_pj'),
+    path('cadastros/', views.registrations_list, name='cadastros_list'),
+
 ]

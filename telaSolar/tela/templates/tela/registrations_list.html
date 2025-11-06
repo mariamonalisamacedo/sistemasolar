@@ -1,0 +1,39 @@
+{% extends 'tela/base.html' %}
+
+{% block title %}Cadastros - Sistema Solar{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h1>Cadastros de Clientes</h1>
+    <p style="text-align:right;"><a class="btn" href="{% url 'cadastro_pf' %}">Novo PF</a> <a class="btn" href="{% url 'cadastro_pj' %}" style="background:#10b981;">Novo PJ</a></p>
+
+    <table style="width:100%; border-collapse: collapse; margin-top:1rem;">
+        <thead>
+            <tr style="text-align:left; border-bottom: 2px solid #eee;">
+                <th style="padding:0.75rem">Tipo</th>
+                <th style="padding:0.75rem">Identificador</th>
+                <th style="padding:0.75rem">Nome / Razão</th>
+                <th style="padding:0.75rem">E-mail</th>
+                <th style="padding:0.75rem">Telefone</th>
+                <th style="padding:0.75rem">Cidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for it in items %}
+            <tr style="border-bottom:1px solid #f0f0f0;">
+                <td style="padding:0.75rem">{{ it.type }}</td>
+                <td style="padding:0.75rem">{{ it.identifier }}</td>
+                <td style="padding:0.75rem">{{ it.name }}</td>
+                <td style="padding:0.75rem">{{ it.email }}</td>
+                <td style="padding:0.75rem">{{ it.phone }}</td>
+                <td style="padding:0.75rem">{{ it.city }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" style="padding:1rem;">Nenhum cadastro encontrado.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
