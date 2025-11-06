@@ -1,0 +1,21 @@
+{% extends 'tela/base.html' %}
+
+{% block title %}Home - Sistema Solar{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <h1>Bem-vindo ao Sistema Solar</h1>
+    <div class="card-container">
+        <div class="card">
+            <h2>Pessoa Física</h2>
+            <p>Cadastre e gerencie informações de pessoas físicas</p>
+            <a href="{% url 'cadastro_pf' %}" class="btn">Cadastrar Pessoa Física</a>
+        </div>
+        <div class="card">
+            <h2>Pessoa Jurídica</h2>
+            <p>Cadastre e gerencie informações de pessoas jurídicas</p>
+            <a href="{% url 'cadastro_pj' %}" class="btn">Cadastrar Pessoa Jurídica</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
